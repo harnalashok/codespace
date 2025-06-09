@@ -6,11 +6,11 @@ services:
     hostname: 127.0.0.1
     image: pgvector/pgvector:pg16
     ports:
-      - 5444:5444
+      - 5432:5432
     restart: always
     environment:
       - POSTGRES_DB=api
-      - POSTGRES_USER=erudites
-      - POSTGRES_PASSWORD=erudites@123
+      - POSTGRES_USER=student
+      - POSTGRES_PASSWORD=Student@2025
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql

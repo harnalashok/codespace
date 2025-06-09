@@ -5,3 +5,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 ollama run llama3.2
 ollama pull nomic-embed-text
+
+#Use the following user credentials for login or account creation:
+id:     Student
+pass:   Student@2025
