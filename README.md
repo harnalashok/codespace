@@ -11,6 +11,7 @@ This project provides a template for quickly setting up a development environmen
 - Quick setup for AI model experimentation
 - Example commands for installing and running models
 - Ready-to-use login credentials for demo purposes
+- Easy installation of Flowise, Langflow, n8n, and Postgres_Vector_Store
 
 ## Getting Started
 
@@ -24,21 +25,44 @@ This project provides a template for quickly setting up a development environmen
 1. **Open this repository in GitHub Codespaces.**
 2. **Install Ollama:**
 
-   ```bash
-   curl -fsSL https://ollama.com/install.sh | sh
-   ```
+    ```bash
+    curl -fsSL https://ollama.com/install.sh | sh
+    ```
 
 3. **Run the Llama 3.2 model:**
 
-   ```bash
-   ollama run llama3.2
-   ```
+    ```bash
+    ollama run llama3.2
+    ```
 
 4. **(Optional) Pull additional models:**
 
-   ```bash
-   ollama pull nomic-embed-text
-   ```
+    ```bash
+    ollama pull nomic-embed-text
+    ```
+
+5. **Install Flowise, Langflow, n8n, and Postgres_Vector_Store:**
+
+    To install all these services at once, run:
+
+    ```bash
+    ./run.sh
+    ```
+
+    This script will set up Flowise, Langflow, n8n, and Postgres_Vector_Store using Docker Compose.
+
+    **To install and run individual services:**
+
+    - Navigate to the desired service directory inside the folder (e.g., `flowise`, `langflow`, etc.).
+      !"cd flowise"
+    
+    - Run the following command:
+
+      ```bash
+      docker compose up -d
+      ```
+
+    This will start only the selected service.
 
 ## Usage
 
