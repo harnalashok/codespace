@@ -1,0 +1,21 @@
+FROM ubuntu:22.04
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y curl sudo && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Ollama
+RUN curl -fsSL https://ollama.com/install.sh | sh
+
+
+# Pull models
+RUN /bin/bash -c "ollama serve && ollama pull nomic-embed-text && \
+                  ollama pull llama3.2 && \
+                  ollama pull llama3.1:8b"
+
+# Expose default Ollama port
+EXPOSE 11434
+
+# Start Ollama server
+CMD ["ollama", "serve"]

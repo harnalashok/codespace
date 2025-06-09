@@ -1,0 +1,24 @@
+2025-06-09 06:05:44 [INFO]: ⬆️ POST /api/v1/auth/resolve
+2025-06-09 06:06:08 [INFO]: ⬆️ POST /api/v1/account/register
+2025-06-09 06:06:09 [INFO]: ⬆️ POST /api/v1/auth/login
+2025-06-09 06:08:13 [INFO]: ⬆️ POST /api/v1/chatflows
+2025-06-09 06:08:15 [INFO]: 🖊 PUT /api/v1/chatflows/12c0a1a1-2f2e-4678-96b0-b69173742207
+2025-06-09 06:08:52 [INFO]: 🖊 PUT /api/v1/chatflows/12c0a1a1-2f2e-4678-96b0-b69173742207
+2025-06-09 06:08:54 [INFO]: ⬆️ POST /api/v1/internal-prediction/12c0a1a1-2f2e-4678-96b0-b69173742207
+2025-06-09 06:08:54 [ERROR]: [server]: Error: Error 401: Unauthorized
+ResponseError: Error 401: Unauthorized
+    at checkOk (/usr/local/lib/node_modules/flowise/node_modules/ollama/dist/browser.cjs:77:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async post (/usr/local/lib/node_modules/flowise/node_modules/ollama/dist/browser.cjs:141:3)
+    at async Ollama.processStreamableRequest (/usr/local/lib/node_modules/flowise/node_modules/ollama/dist/browser.cjs:260:25)
+    at async ChatOllama._streamResponseChunks (/usr/local/lib/node_modules/flowise/node_modules/@langchain/ollama/dist/chat_models.cjs:759:24)
+    at async ChatOllama._generate (/usr/local/lib/node_modules/flowise/node_modules/@langchain/ollama/dist/chat_models.cjs:692:26)
+    at async Promise.allSettled (index 0)
+    at async ChatOllama._generateUncached (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:254:29)
+    at async ChatOllama.invoke (/usr/local/lib/node_modules/flowise/node_modules/@langchain/core/dist/language_models/chat_models.cjs:92:24)
+    at async RunnableSequence.invoke (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/node_modules/@langchain/core/dist/runnables/base.cjs:1285:33)
+    at async ConversationChain_Chains.run (/usr/local/lib/node_modules/flowise/node_modules/flowise-components/dist/nodes/chains/ConversationChain/ConversationChain.js:111:19)
+    at async executeFlow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:538:22)
+    at async utilBuildChatflow (/usr/local/lib/node_modules/flowise/dist/utils/buildChatflow.js:797:28)
+    at async createAndStreamInternalPrediction (/usr/local/lib/node_modules/flowise/dist/controllers/internal-predictions/index.js:38:29)
+2025-06-09 06:09:18 [INFO]: ⬆️ POST /api/v1/internal-prediction/12c0a1a1-2f2e-4678-96b0-b69173742207

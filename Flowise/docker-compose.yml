@@ -1,22 +1,19 @@
 services:
   flowise:
-    image: flowiseai/flowise:3.0.0
+    image: flowiseai/flowise:3.0.1
     container_name: flowise
     restart: always
-    network_mode: "host"
+    ports:
+      - "3000:3000"
     environment:
-      - PORT=3001
       - DATABASE_PATH=/root/.flowise
       - APIKEY_PATH=/root/.flowise
       - SECRETKEY_PATH=/root/.flowise
       - LOG_PATH=/root/.flowise/logs
       - BLOB_STORAGE_PATH=/root/.flowise/storage
       - CORS_ORIGIN=*
-      - FLOWISE_USERNAME=erudites
-      - FLOWISE_PASSWORD=erudites@123
       - FLOWISE_SECRETKEY_OVERWRITE=myencryptionkey
       - FLOWISE_FILE_SIZE_LIMIT=50mb
       - DISABLE_FLOWISE_TELEMETRY=true
     volumes:
       - ./flowise_data:/root/.flowise
-
